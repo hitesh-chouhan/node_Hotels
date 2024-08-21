@@ -2,13 +2,10 @@ const mongoose=require('mongoose');
 //importing dotenv module;
 require('dotenv').config();
 //*url
-//const mongoUrl='mongodb://localhost:27017/hotels'
+//const mongoUrl_local=process.env.MongoUrl_local;//ye abbhi tk git hub pr push nhi hua he
 //*acsessing .env var.;
 const mongoUrl=process.env.Mongourl;
-mongoose.connect(mongoUrl,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-})
+mongoose.connect(mongoUrl)
 const db=mongoose.connection;
 db.on('connected', () => {
     console.log("it is connected");
